@@ -9,18 +9,14 @@ module.exports = async function sendTransaction({
   to,
   gasLimit,
   value,
+  data,
   token,
   exchanger,
   exchangeRate,
   chainId,
-  bytecode,
-  params,
 }) {
-  const nonce = web3.utils.toHex(await web3.eth.getTransactionCount(from));
-  const data = bytecode + params;
-
   const txParams = { 
-    nonce, 
+    nonce: web3.utils.toHex(await web3.eth.getTransactionCount(from)), 
     gasPrice: "0xB165100C4", // Don't change
     chainId,
   };
