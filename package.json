@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/bodhiproject/nakajs-tx-signer/issues"
   },
-  "homepage": "https://github.com/bodhiproject/nakajs-tx-signer#readme"
+  "homepage": "https://github.com/bodhiproject/nakajs-tx-signer#readme",
+  "dependencies": {
+    "nakajs-tx": "^1.0.2",
+    "web3": "^1.0.0-beta.36"
+  }
 }
