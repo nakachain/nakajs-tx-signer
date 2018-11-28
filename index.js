@@ -45,7 +45,7 @@ const data = web3.eth.abi.encodeFunctionCall(
     "stateMutability": "nonpayable",
     "type": "function"
   }, 
-  ['f136300801124b8241616A05624404724a4E37f7', '10000000000000'],
+  ['D5D087daABC73Fc6Cc5D9C1131b93ACBD53A2428', '10000000000000'],
 );
 
 // Address of the pay by token
