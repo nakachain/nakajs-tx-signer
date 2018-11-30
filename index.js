@@ -45,17 +45,17 @@ const data = web3.eth.abi.encodeFunctionCall(
     "stateMutability": "nonpayable",
     "type": "function"
   }, 
-  ['D5D087daABC73Fc6Cc5D9C1131b93ACBD53A2428', '10000000000000'],
+  ['D5D087daABC73Fc6Cc5D9C1131b93ACBD53A2428', '100000000'],
 );
 
 // Address of the pay by token
-const token = undefined; 
+const token = '0xc371214F6ca48f1F5Ee74A78aE2C1032E1A06C4a'; 
 
 // Address of exchanger who will accept NRC Tokens and pay tx fees in NAKA
-const exchanger = undefined; 
+const exchanger = '0xD5D087daABC73Fc6Cc5D9C1131b93ACBD53A2428'; 
 
 // 1 NRC Token = ? NAKA
-const exchangeRate = undefined; 
+const exchangeRate = '0xDE0B6B3A7640000'; 
 
 // Custom chain id
 const chainId = 25;

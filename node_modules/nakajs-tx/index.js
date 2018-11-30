@@ -98,6 +98,7 @@ class Transaction {
       name: 'exchangeRate',
       length: 32,
       allowZero: true,
+      allowLess: true,
       default: new Buffer([])
     }, {
       name: 'v',

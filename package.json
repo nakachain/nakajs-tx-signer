@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/bodhiproject/nakajs-tx-signer#readme",
   "dependencies": {
-    "nakajs-tx": "^1.0.2",
+    "nakajs-tx": "^1.1.0",
     "web3": "^1.0.0-beta.36"
   }
 }
