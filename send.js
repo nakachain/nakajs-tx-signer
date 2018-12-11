@@ -1,7 +1,7 @@
 const Transaction = require('nakajs-tx');
 const Web3 = require('web3');
 
-const web3 = new Web3('http://18.182.44.53:8545');
+const web3 = new Web3('http://api.nakabase.com');
 
 module.exports = async function sendTransaction({ 
   from,
