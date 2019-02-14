@@ -1,16 +1,16 @@
 {
   "name": "nakajs-tx-signer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lightweight transaction sending module for Nakachain",
   "main": "index.js",
+  "author": "Deric Walintukan <deric@nakachain.org>",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bodhiproject/nakajs-tx-signer.git"
   },
-  "author": "Deric Walintukan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bodhiproject/nakajs-tx-signer/issues"
