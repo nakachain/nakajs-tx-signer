@@ -52,33 +52,32 @@ const exchanger = process.env.EXCHANGER
 const exchangeRate = process.env.EXCHANGE_RATE
 
 // Encode data
-const data = ''
-// const data = new Web3().eth.abi.encodeFunctionCall(
-//   {
-//     "constant": false,
-//     "inputs": [
-//       {
-//         "name": "to",
-//         "type": "address"
-//       },
-//       {
-//         "name": "amount",
-//         "type": "uint256"
-//       }
-//     ],
-//     "name": "transfer",
-//     "outputs": [
-//       {
-//         "name": "success",
-//         "type": "bool"
-//       }
-//     ],
-//     "payable": false,
-//     "stateMutability": "nonpayable",
-//     "type": "function"
-//   }, 
-//   ['AbDc40732ef28a597A5431ADC3E8d11F15F3609e', '100000000'],
-// )
+const data = new Web3().eth.abi.encodeFunctionCall(
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "transfer",
+    "outputs": [
+      {
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }, 
+  ['AbDc40732ef28a597A5431ADC3E8d11F15F3609e', '100000000'],
+)
 
 sendTransaction({
   rpcUrl,
