@@ -1,5 +1,5 @@
 const Web3 = require('web3')
-require('dotenv').config({ path: process.cwd() })
+require('dotenv').config()
 
 const sendTransaction = require('../lib/send-tx')
 
@@ -76,7 +76,7 @@ const data = new Web3().eth.abi.encodeFunctionCall(
     "stateMutability": "nonpayable",
     "type": "function"
   }, 
-  ['0x1352bdd00594359bec75f98f96c62efb159f49d7', '100000000'],
+  ['AbDc40732ef28a597A5431ADC3E8d11F15F3609e', '100000000'],
 )
 
 sendTransaction({
