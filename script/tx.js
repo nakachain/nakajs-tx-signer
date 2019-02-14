@@ -1,7 +1,7 @@
 const Web3 = require('web3')
 require('dotenv').config({ path: process.cwd() })
 
-const sendTransaction = require('./send-tx')
+const sendTransaction = require('../lib/send-tx')
 
 /**
  * Create a .env in the root project folder and add the necessary fields.

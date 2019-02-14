@@ -1,5 +1,5 @@
 const Web3 = require('web3');
-const sendTransaction = require('./send');
+const sendTransaction = require('./tx');
 
 const web3 = new Web3();
 
