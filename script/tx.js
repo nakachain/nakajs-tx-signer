@@ -4,7 +4,18 @@ require('dotenv').config({ path: process.cwd() })
 const sendTransaction = require('../lib/send-tx')
 
 /**
- * Create a .env in the root project folder and add the necessary fields.
+ * Send a transaction
+ * 
+ * 1. Create a .env in the root project folder and add the necessary fields.
+ * Required Fields:
+ * - RPC_URL
+ * - CHAIN_ID
+ * - FROM_ADDRESS
+ * - FROM_PRIVATE_KEY
+ * - TO
+ * 
+ * .env
+ * ====
  * RPC_URL=
  * CHAIN_ID=
  * FROM_ADDRESS=
@@ -17,15 +28,8 @@ const sendTransaction = require('../lib/send-tx')
  * EXCHANGER=
  * EXCHANGE_RATE=
  * 
- * Required Fields:
- * - RPC_URL
- * - CHAIN_ID
- * - FROM_ADDRESS
- * - FROM_PRIVATE_KEY
- * - TO
- * 
- * Usage:
- * $ node tx.js
+ * 2. Edit the `data` for which function you want to call.
+ * 3. `node tx.js`
  */
 
 // Env variable validation

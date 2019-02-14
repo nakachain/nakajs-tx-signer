@@ -4,7 +4,17 @@ require('dotenv').config({ path: process.cwd() })
 const sendTransaction = require('../lib/send-tx')
 
 /**
- * Create a .env in the root project folder and add the necessary fields.
+ * Deploy a contract
+ * 
+ * 1. Create a .env in the root project folder and add the necessary fields.
+ * Required Fields:
+ * - RPC_URL
+ * - CHAIN_ID
+ * - FROM_ADDRESS
+ * - FROM_PRIVATE_KEY
+ * 
+ * .env
+ * ====
  * RPC_URL=
  * CHAIN_ID=
  * FROM_ADDRESS=
@@ -17,14 +27,8 @@ const sendTransaction = require('../lib/send-tx')
  * EXCHANGER=
  * EXCHANGE_RATE=
  * 
- * Required Fields:
- * - RPC_URL
- * - CHAIN_ID
- * - FROM_ADDRESS
- * - FROM_PRIVATE_KEY
- * 
- * Usage:
- * $ node deploy.js
+ * 2. Edit the `bytecode` and `params` that fits your constructor
+ * 3. `node deploy.js`
  */
 
 // Env variable validation
