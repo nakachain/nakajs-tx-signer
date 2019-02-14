@@ -13,7 +13,6 @@ const sendTransaction = require('../lib/send-tx')
  * GAS_LIMIT=
  * GAS_PRICE=
  * VALUE=0
- * DATA=
  * TOKEN=
  * EXCHANGER=
  * EXCHANGE_RATE=
@@ -31,8 +30,6 @@ if (!process.env.CHAIN_ID) throw Error('missing `CHAIN_ID` in environment')
 if (!process.env.FROM_ADDRESS) throw Error('missing `FROM_ADDRESS` in environment')
 if (!process.env.FROM_PRIVATE_KEY) throw Error('missing `FROM_PRIVATE_KEY` in environment')
 
-const web3 = new Web3();
-
 const rpcUrl = process.env.RPC_URL
 const chainId = process.env.CHAIN_ID
 const from = process.env.FROM_ADDRESS
@@ -46,7 +43,7 @@ const exchanger = process.env.EXCHANGER
 const exchangeRate = process.env.EXCHANGE_RATE
 
 // Encode data
-const data = web3.eth.abi.encodeFunctionCall(
+const data = new Web3().eth.abi.encodeFunctionCall(
   {
     "constant": false,
     "inputs": [
