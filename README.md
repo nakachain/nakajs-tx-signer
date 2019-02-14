@@ -1,4 +1,4 @@
-# Nakajs-tx-signer
+# nakajs-tx-signer
 
 ## Install
 ```bash
