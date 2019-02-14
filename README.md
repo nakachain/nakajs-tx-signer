@@ -66,5 +66,5 @@ sendTransaction({
 ## Local Scripts
 1. Clone repo
 2. `cd script`
-3. Follow the instructions in `tx.js` or `deploy.js`
-4. `node tx.js` or `node deploy.js`
+3. Follow the instructions in `send.js`, `contract.js`, or `deploy.js`
+4. `npm run send`, `npm run contract`, or `npm run deploy`
