@@ -22,13 +22,13 @@ const sendTransaction = require('../lib/send-tx')
  * TO=
  * GAS_LIMIT=
  * GAS_PRICE=
- * VALUE=0
+ * VALUE=
  * TOKEN=
  * EXCHANGER=
  * EXCHANGE_RATE=
  * 
  * 2. Edit the `bytecode` and `params` that fits your constructor
- * 3. `node deploy.js`
+ * 3. `npm run deploy`
  */
 
 // Env variable validation
