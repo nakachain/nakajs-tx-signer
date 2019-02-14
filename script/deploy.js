@@ -22,6 +22,9 @@ const sendTransaction = require('../lib/send-tx')
  * - CHAIN_ID
  * - FROM_ADDRESS
  * - FROM_PRIVATE_KEY
+ * 
+ * Usage:
+ * $ node deploy.js
  */
 
 // Env variable validation

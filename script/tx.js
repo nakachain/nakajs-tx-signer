@@ -22,6 +22,10 @@ const sendTransaction = require('../lib/send-tx')
  * - CHAIN_ID
  * - FROM_ADDRESS
  * - FROM_PRIVATE_KEY
+ * - TO
+ * 
+ * Usage:
+ * $ node tx.js
  */
 
 // Env variable validation
@@ -29,6 +33,7 @@ if (!process.env.RPC_URL) throw Error('missing `RPC_URL` in environment')
 if (!process.env.CHAIN_ID) throw Error('missing `CHAIN_ID` in environment')
 if (!process.env.FROM_ADDRESS) throw Error('missing `FROM_ADDRESS` in environment')
 if (!process.env.FROM_PRIVATE_KEY) throw Error('missing `FROM_PRIVATE_KEY` in environment')
+if (!process.env.TO) throw Error('missing `TO` in environment')
 
 const rpcUrl = process.env.RPC_URL
 const chainId = process.env.CHAIN_ID
