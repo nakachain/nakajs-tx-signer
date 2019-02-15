@@ -1,6 +1,6 @@
 {
   "name": "nakajs-tx-signer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight transaction sending module for Nakachain",
   "main": "index.js",
   "author": "Deric Walintukan <deric@nakachain.org>",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/bodhiproject/nakajs-tx-signer#readme",
   "dependencies": {
     "dotenv": "^6.2.0",
+    "lodash": "^4.17.11",
     "nakajs-tx": "^1.1.0",
     "web3": "^1.0.0-beta.36"
   }
