@@ -1,6 +1,6 @@
 {
   "name": "nakajs-tx-signer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight transaction sending module for Nakachain",
   "main": "index.js",
   "author": "Deric Walintukan <deric@nakachain.org>",
