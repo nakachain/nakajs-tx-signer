@@ -1,6 +1,7 @@
-const Web3 = require('web3')
 require('dotenv').config()
+const Web3 = require('web3')
 
+const getEnv = require('./get-env')
 const sendTransaction = require('../lib/send-tx')
 
 /**
@@ -15,20 +16,19 @@ const sendTransaction = require('../lib/send-tx')
  * - TO
  * - GAS_LIMIT
  * 
- * .env
- * ====
- * RPC_URL=
- * CHAIN_ID=
- * FROM_ADDRESS=
- * FROM_PRIVATE_KEY=
- * TO=
- * NONCE=
- * GAS_LIMIT=
- * GAS_PRICE=
- * VALUE=
- * TOKEN=
- * EXCHANGER=
- * EXCHANGE_RATE=
+ * Allowed Fields:
+ * - RPC_URL
+ * - CHAIN_ID
+ * - FROM_ADDRESS
+ * - FROM_PRIVATE_KEY
+ * - TO
+ * - NONCE
+ * - GAS_LIMIT
+ * - GAS_PRICE
+ * - VALUE
+ * - TOKEN
+ * - EXCHANGER
+ * - EXCHANGE_RATE
  * 
  * 2. Edit the `data` for which function you want to call.
  * 3. `npm run contract`
@@ -41,19 +41,6 @@ if (!process.env.FROM_ADDRESS) throw Error('missing `FROM_ADDRESS` in environmen
 if (!process.env.FROM_PRIVATE_KEY) throw Error('missing `FROM_PRIVATE_KEY` in environment')
 if (!process.env.TO) throw Error('missing `TO` in environment')
 if (!process.env.GAS_LIMIT) throw Error('missing `GAS_LIMIT` in environment')
-
-const rpcUrl = process.env.RPC_URL
-const chainId = Number(process.env.CHAIN_ID)
-const from = process.env.FROM_ADDRESS
-const fromPrivKey = process.env.FROM_PRIVATE_KEY
-const to = process.env.TO
-const nonce = process.env.NONCE
-const gasLimit = process.env.GAS_LIMIT ? Number(process.env.GAS_LIMIT) : undefined
-const gasPrice = process.env.GAS_PRICE
-const value = process.env.VALUE
-const token = process.env.TOKEN
-const exchanger = process.env.EXCHANGER
-const exchangeRate = process.env.EXCHANGE_RATE
 
 // Encode data
 const data = new Web3().eth.abi.encodeFunctionCall(
@@ -84,17 +71,6 @@ const data = new Web3().eth.abi.encodeFunctionCall(
 )
 
 sendTransaction({
-  rpcUrl,
-  chainId,
-  from,
-  fromPrivKey, 
-  to,
-  nonce,
-  gasLimit,
-  gasPrice,
-  value,
+  ...getEnv(),
   data,
-  token,
-  exchanger,
-  exchangeRate,
 })
