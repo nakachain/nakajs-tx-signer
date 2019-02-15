@@ -1,5 +1,5 @@
+require('dotenv').config()
 const Web3 = require('web3')
-require('dotenv').config({ path: process.cwd() })
 
 const getEnv = require('./get-env')
 const sendTransaction = require('../lib/send-tx')
