@@ -22,6 +22,7 @@ const sendTransaction = require('../lib/send-tx')
  * FROM_ADDRESS=
  * FROM_PRIVATE_KEY=
  * TO=
+ * NONCE=
  * GAS_LIMIT=
  * GAS_PRICE=
  * VALUE=
@@ -42,11 +43,12 @@ if (!process.env.TO) throw Error('missing `TO` in environment')
 if (!process.env.GAS_LIMIT) throw Error('missing `GAS_LIMIT` in environment')
 
 const rpcUrl = process.env.RPC_URL
-const chainId = process.env.CHAIN_ID
+const chainId = Number(process.env.CHAIN_ID)
 const from = process.env.FROM_ADDRESS
 const fromPrivKey = process.env.FROM_PRIVATE_KEY
 const to = process.env.TO
-const gasLimit = process.env.GAS_LIMIT
+const nonce = process.env.NONCE
+const gasLimit = process.env.GAS_LIMIT ? Number(process.env.GAS_LIMIT) : undefined
 const gasPrice = process.env.GAS_PRICE
 const value = process.env.VALUE
 const token = process.env.TOKEN
@@ -87,6 +89,7 @@ sendTransaction({
   from,
   fromPrivKey, 
   to,
+  nonce,
   gasLimit,
   gasPrice,
   value,
