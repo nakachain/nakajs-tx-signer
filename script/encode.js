@@ -37,4 +37,4 @@ const encoded = RLP.encode([
   txParams.r,
   txParams.s,
 ])
-console.log('ENCODED:', encoded.toString('hex'))
+console.log('ENCODED:', `0x${encoded.toString('hex')}`)
