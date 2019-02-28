@@ -6,6 +6,7 @@
   "author": "Deric Walintukan <deric@nakachain.org>",
   "scripts": {
     "encode": "node script/encode.js",
+    "sign": "node script/sign.js",
     "send": "node script/send.js",
     "contract": "node script/contract.js",
     "deploy": "node script/deploy.js"
