@@ -17,13 +17,17 @@ const txParams = {
   token: envParams.token,
   exchanger: envParams.exchanger,
   exchangeRate: envParams.exchangeRate,
-  v: envParams.chainId,
-  r: 0,
-  s: 0,
+}
+// Add signature values only if chainId is specified.
+// If no chainId, we are signing it the pre-EIP155 way.
+if (envParams.chainId) {
+  txParams.v = Number(envParams.chainId)
+  txParams.r = 0
+  txParams.s = 0
 }
 console.log('TX:', JSON.stringify(txParams))
 
-const encoded = RLP.encode([
+const encodeInput = [
   txParams.nonce,
   txParams.gasPrice,
   txParams.gasLimit,
@@ -36,5 +40,11 @@ const encoded = RLP.encode([
   txParams.v,
   txParams.r,
   txParams.s,
-])
+]
+if (!isUndefined(txParams.v)) {
+  encodeInput.push(txParams.v)
+  encodeInput.push(txParams.r)
+  encodeInput.push(txParams.s)
+}
+const encoded = RLP.encode(encodeInput)
 console.log('ENCODED:', `0x${encoded.toString('hex')}`)
