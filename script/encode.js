@@ -5,6 +5,25 @@ const RLP = require('rlp')
 
 const getEnv = require('./get-env')
 
+/**
+ * Encodes the transaction without signing it and prints out the encoded hex string.
+ * 
+ * 1. Create a .env in the root project folder and add the necessary fields.
+ * Allowed Fields:
+ * - CHAIN_ID
+ * - NONCE
+ * - GAS_PRICE
+ * - GAS_LIMIT
+ * - TO
+ * - VALUE
+ * - DATA
+ * - TOKEN
+ * - EXCHANGER
+ * - EXCHANGE_RATE
+ * 
+ * 2. `npm run encode`
+ */
+
 const web3 = new Web3()
 const envParams = getEnv()
 const txParams = {

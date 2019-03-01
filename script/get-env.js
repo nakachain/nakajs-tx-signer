@@ -1,31 +1,27 @@
 const { isEmpty } = require('lodash')
 
-module.exports = getEnvVars = () => {
-  const rpcUrl = process.env.RPC_URL
-  const chainId = Number(process.env.CHAIN_ID)
-  const from = process.env.FROM_ADDRESS
-  const fromPrivKey = process.env.FROM_PRIVATE_KEY
-  const to = process.env.TO || undefined
-  const nonce = !isEmpty(process.env.NONCE) ? Number(process.env.NONCE) : undefined
-  const gasLimit = !isEmpty(process.env.GAS_LIMIT) ? Number(process.env.GAS_LIMIT) : undefined
-  const gasPrice = process.env.GAS_PRICE || undefined
-  const value = process.env.VALUE || undefined
-  const token = process.env.TOKEN || undefined
-  const exchanger = process.env.EXCHANGER || undefined
-  const exchangeRate = process.env.EXCHANGE_RATE || undefined
+const formatString = (value) => {
+  return !isEmpty(value) ? value : undefined
+}
 
+const formatNumber = (value) => {
+  return !isEmpty(value) ? Number(value) : undefined
+}
+
+module.exports = getEnvVars = () => {
   return {
-    rpcUrl,
-    chainId,
-    from,
-    fromPrivKey, 
-    to,
-    nonce,
-    gasLimit,
-    gasPrice,
-    value,
-    token,
-    exchanger,
-    exchangeRate,
+    rpcUrl: formatString(process.env.RPC_URL),
+    chainId: formatNumber(process.env.CHAIN_ID),
+    from: formatString(process.env.FROM_ADDRESS),
+    fromPrivKey: formatString(process.env.FROM_PRIVATE_KEY), 
+    nonce: formatNumber(process.env.NONCE),
+    gasPrice: formatString(process.env.GAS_PRICE),
+    gasLimit: formatNumber(process.env.GAS_LIMIT),
+    to: formatString(process.env.TO),
+    value: formatString(process.env.VALUE),
+    data: formatString(process.env.DATA),
+    token: formatString(process.env.TOKEN),
+    exchanger: formatString(process.env.EXCHANGER),
+    exchangeRate: formatString(process.env.EXCHANGE_RATE),
   }
 }

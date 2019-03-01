@@ -5,7 +5,7 @@ const getEnv = require('./get-env')
 const sendTransaction = require('../lib/send-tx')
 
 /**
- * Deploy a contract
+ * Executes a contract deployment transaction.
  * 
  * 1. Create a .env in the root project folder and add the necessary fields.
  * Required Fields:

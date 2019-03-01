@@ -5,7 +5,7 @@ const getEnv = require('./get-env')
 const sendTransaction = require('../lib/send-tx')
 
 /**
- * Execute a contract transaction
+ * Executes a contract transaction.
  * 
  * 1. Create a .env in the root project folder and add the necessary fields.
  * Required Fields:
