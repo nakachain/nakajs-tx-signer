@@ -53,4 +53,6 @@ console.log('TX:', JSON.stringify(txParams))
 
 const tx = new Transaction(txParams)
 tx.sign(Buffer.from(envParams.fromPrivKey, 'hex'))
-console.log(`SIGNED: 0x${tx.serialize().toString('hex')}`)
+const encoded = `0x${tx.serialize().toString('hex')}`
+console.log('SIGNED:', encoded)
+console.log('HASH:', web3.utils.sha3(encoded));
